@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mumbai Indians Fan Hub</title>
+    <link rel="icon" type="image/png" href="site-logo1.webp">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER / NAV -->
+    <header class="site-header">
+      <div class="container nav-inner">
+        <div class="logo">
+          <a href="https://www.mumbaiindians.com/" target="_blank" rel="noopener noreferrer"><img id="Mi_logo" src="site-logo1.webp" alt="Mi_logo"></a>
+          <!-- <span class="logo-mark">MI</span> -->
+          <span class="logo-text">Mumbai Indians Fan Hub</span>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#squad">Squad</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="#fan-zone">Fan Zone</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-text">
+            <p class="tagline">Indian Premier League · 2025</p>
+            <h1>Bleed <span class="accent">Blue & <span style="color: gold;">Gold</span></span></h1>
+            <p class="lead" style="font-size: 45px; color: gold; font-weight: bold;">
+              Duniya Hila Denge Hum...
+            </p>
+            <div class="hero-actions">
+              <a href="#schedule" class="btn">View Next Match</a>
+              <a href="#fan-zone" class="btn btn-ghost">Join Fan Zone</a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <p class="hero-label">Next Match</p>
+            <h2 id="nextMatchTitle">MI vs CSK</h2>
+            <p id="nextMatchInfo" class="muted">
+              Wankhede Stadium · Mumbai · Sat 7:30 PM
+            </p>
+            <p class="next-tag">Let’s make Wankhede roar. 🔥</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TEAM INFO -->
+      <section id="team" class="section">
+        <div class="container">
+          <h2 class="section-title">Team Overview</h2>
+
+          <div class="team-grid">
+            <div class="team-about">
+              <p>
+                Mumbai Indians are one of the most successful franchises in the
+                IPL, known for their strong core, explosive batting, and
+                world-class bowling unit. This fan hub highlights key
+                information such as match schedule, squad, and live fan
+                engagement elements like polls and feedback.
+              </p>
+            </div>
+
+            <div class="team-highlights">
+              <div class="stat-card">
+                <span class="stat-label">IPL Titles</span>
+                <span class="stat-value">5</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label">Home Ground</span>
+                <span class="stat-value">Wankhede</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label">Captain</span>
+                <span class="stat-value">Hardik Pandya*</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-label">Coach</span>
+                <span class="stat-value">Mark Boucher*</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SQUAD -->
+      <section id="squad" class="section alt-bg">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Squad</h2>
+            <div class="chip-group">
+              <button class="chip active" data-role="all">All</button>
+              <button class="chip" data-role="batsman">Batsmen</button>
+              <button class="chip" data-role="bowler">Bowlers</button>
+              <button class="chip" data-role="all-rounder">All-rounders</button>
+              <button class="chip" data-role="wk">Wicket-keepers</button>
+            </div>
+          </div>
+
+          <div id="squadGrid" class="squad-grid">
+          </div>
+        </div>
+      </section>
+
+      <!-- SCHEDULE -->
+      <section id="schedule" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Match Schedule</h2>
+            <select id="scheduleFilter" class="select">
+              <option value="all">All matches</option>
+              <option value="upcoming">Upcoming</option>
+              <option value="completed">Completed</option>
+              <option value="home">Home (Mumbai)</option>
+              <option value="away">Away</option>
+            </select>
+          </div>
+
+          <div class="schedule-table-wrapper">
+            <table class="schedule-table">
+              <thead>
+                <tr>
+                  <th>Match</th>
+                  <th>Venue</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="scheduleBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section id="stats" class="section alt-bg">
+        <div class="container">
+          <h2 class="section-title">Season Stats (Sample)</h2>
+
+          <div class="stats-grid">
+            <div class="stats-card">
+              <h3>Matches</h3>
+              <p><strong>14</strong> played</p>
+              <p>
+                <span class="badge">8 Wins</span> ·
+                <span class="badge badge-muted">6 Losses</span>
+              </p>
+            </div>
+
+            <div class="stats-card">
+              <h3>Win Rate</h3>
+              <div class="progress-wrapper">
+                <div class="progress">
+                  <div class="progress-fill" style="--fill: 57%"></div>
+                </div>
+                <span>57%</span>
+              </div>
+            </div>
+
+            <div class="stats-card">
+              <h3>Top Run Scorer</h3>
+              <p><strong>Suryakumar Yadav</strong></p>
+              <p class="muted">482 runs · SR 165.2</p>
+            </div>
+
+            <div class="stats-card">
+              <h3>Top Wicket Taker</h3>
+              <p><strong>Jasprit Bumrah</strong></p>
+              <p class="muted">21 wickets · Econ 7.1</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAN ZONE -->
+      <section id="fan-zone" class="section">
+        <div class="container">
+          <h2 class="section-title">Fan Zone</h2>
+
+          <div class="fan-grid">
+            <div class="poll-card">
+              <h3>Poll: Who will be MI's MVP this season?</h3>
+              <p class="muted small">
+                Your vote is stored in this browser only.
+              </p>
+
+              <div id="pollOptions" class="poll-options">
+              </div>
+
+              <div id="pollResults" class="poll-results">
+              </div>
+            </div>
+
+            <div class="fan-message-card">
+              <h3>Send a Message to the Team</h3>
+              <form id="messageForm" class="message-form">
+                <input
+                  type="text"
+                  id="fanName"
+                  placeholder="Your name"
+                  required
+                />
+                <textarea
+                  id="fanMessage"
+                  rows="3"
+                  placeholder="Your message..."
+                  required
+                ></textarea>
+                <button type="submit" class="btn full">Post Message</button>
+              </form>
+
+              <div id="messageList" class="message-list">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section alt-bg">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <p class="muted">
+            This is a student project for practicing web development. For
+            feedback on this site or collaboration opportunities, use the form
+            below.
+          </p>
+
+          <form class="contact-form">
+            <div class="grid-2">
+              <label>
+                Name
+                <input type="text" required />
+              </label>
+              <label>
+                Email
+                <input type="email" required />
+              </label>
+            </div>
+            <label>
+              Message
+              <textarea rows="4" required></textarea>
+            </label>
+            <button type="submit" class="btn">Send </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- PLAYER DETAIL MODAL -->
+      <div id="playerModal" class="modal" aria-hidden="true">
+        <div class="modal-dialog player-modal-dialog">
+          <button
+            id="playerModalClose"
+            class="modal-close"
+            aria-label="Close player details"
+          >
+            ✕
+          </button>
+          <div id="playerModalContent" class="player-modal-content">
+          </div>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="container">
+          <p>
+            Made by Vimlesh Mourya · Non-official IPL fan project for learning.
+          </p>
+        </div>
+      </footer>
+    </main>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
